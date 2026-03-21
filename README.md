@@ -14,7 +14,7 @@ Searching for careers across fragmented platforms like LinkedIn, Indeed, and Goo
 * **Automated Rotation:** Includes a built-in retention policy to manage local data storage and ensure a clean workspace.
 
 ## 🛠 Technical Architecture
-* **Language:** Python 3.12+
+* **Language:** Python 3.12
 * **Data Processing:** `Pandas`
 * **File Management:** `Pathlib` (Object-oriented filesystem paths)
 * **Privacy:** Robust ignore rules to safeguard personal data and local environments.
