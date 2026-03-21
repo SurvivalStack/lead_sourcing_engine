@@ -15,6 +15,7 @@ Searching for careers across fragmented platforms like LinkedIn, Indeed, and Goo
 
 ## 🛠 Technical Architecture
 * **Language:** Python 3.12
+* **Sourcing Engine:** `python-jobspy` (API-less multi-platform aggregation)
 * **Data Processing:** `Pandas`
 * **File Management:** `Pathlib` (Object-oriented filesystem paths)
 * **Privacy:** Robust ignore rules to safeguard personal data and local environments.
@@ -34,3 +35,6 @@ The engine is decoupled from the search logic. To run your own search, update th
 
 ## 📈 Business Impact
 By automating the discovery phase of the search process, this engine reduces manual overhead by an estimated **80%**. This efficiency allows for a pivot away from data collection and toward high-value activities like application tailoring and strategic networking.
+
+⚠️ Disclaimer & Ethics
+This tool is intended for personal career research and educational purposes. Because it relies on web scraping via python-jobspy, its functionality is subject to change based on updates to the host platforms' site structures. Users should adhere to the Terms of Service of the respective job boards and implement responsible scraping practices (e.g., using the built-in jitter and limiting request frequency).
