@@ -1,0 +1,12 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Personal Data (The lead files)
+jobleads_*.csv
+leads_*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
