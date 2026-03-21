@@ -1,0 +1,38 @@
+# ==============================================================================
+# JOB SOURCING ENGINE CONFIGURATION (TEMPLATE)
+# ==============================================================================
+
+search:
+  # The Boolean search string. Use quotes to handle special characters. (e.g., "Chief Cat Herder" OR "Wizard of Light Bulbs")
+  term: '("Lead Dragon Tamer" OR "Chief Martian Officer") AND ("SpaceX" OR "NASA")'
+  
+  # Geographic focus (e.g., "Middle Earth", "Atlantis", "United Kingdom", "USA", "London", "Dallas, TX")
+  location: "Uranus"
+  
+  # Target count per platform
+  results_wanted: 2
+  
+  # Remote only?
+  is_remote: true
+  
+  # Options: ["linkedin", "indeed", "google", "zip_recruiter", "glassdoor"]
+  sites: ["linkedin", "indeed"]
+
+# DATA RETENTION & HYGIENE
+# ------------------------------------------------------------------------------
+retention:
+# The maximum number of CSV files to retain. 
+# When the folder exceeds this count, the oldest files are purged first 
+# to prevent local storage bloat.
+# Default 21
+  max_files: 21
+
+# The age limit (in days) for lead data. 
+# Files older than this are deleted to ensure your search results 
+# remain high signal and relevant to the current market.
+# Default 14
+  max_days: 14
+
+clutter_list: 
+  - "ScammyAggregator"
+  - "LowSignalBoard"

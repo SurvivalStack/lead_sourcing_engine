@@ -9,7 +9,7 @@ __pycache__/
 Thumbs.db
 
 # Config Files
-config.yaml
+#config.yaml
 
 # Personal Data (The lead files)
 leads_*.csv
