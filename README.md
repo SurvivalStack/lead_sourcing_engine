@@ -19,5 +19,18 @@ Searching for careers across fragmented platforms like LinkedIn, Indeed, and Goo
 * **File Management:** `Pathlib` (Object-oriented filesystem paths)
 * **Privacy:** Robust ignore rules to safeguard personal data and local environments.
 
+## ⚙️ Configuration
+The engine is decoupled from the search logic. To run your own search, update the `config.yaml` file with your specific parameters:
+
+* **Boolean Strings:** Supports complex queries (e.g., `(Role A OR Role B) AND Industry`).
+* **Platform Control:** Toggle between LinkedIn, Indeed, and Google Jobs.
+* **Smart Filtering:** Add known low-quality boards to the `clutter_list` to scrub them from your results.
+
+## 📦 Installation
+1. Clone the repository.
+2. Create a virtual environment: `python -m venv .venv`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run the engine: `python lead_sourcing_engine.py`
+
 ## 📈 Business Impact
 By automating the discovery phase of the search process, this engine reduces manual overhead by an estimated **80%**. This efficiency allows for a pivot away from data collection and toward high-value activities like application tailoring and strategic networking.
