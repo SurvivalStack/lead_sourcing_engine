@@ -5,3 +5,14 @@ repos:
       - id: conventional-pre-commit
         stages: [commit-msg]
         args: []
+  - repo: local
+    hooks:
+      - id: check-config-sync
+        name: Check config.yaml and config.yaml.example sync
+        entry: >
+          python -c "import sys; staged = sys.argv[1:]; 
+          print('REMINDER: You updated config.yaml. Did you update config.yaml.example?') 
+          if 'config.yaml' in staged and 'config.yaml.example' not in staged else None"
+        language: python
+        files: ^config\.yaml$
+        always_run: false

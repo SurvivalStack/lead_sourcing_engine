@@ -25,6 +25,10 @@ SITES = config['search']['sites']
 RESULTS_WANTED = config['search']['results_wanted']
 IS_REMOTE = config['search']['is_remote']
 
+# Stealth and delay parameters, non-rhythmic delays between requests
+JITTER_MIN = config['stealth']['jitter_min']
+JITTER_MAX = config['stealth']['jitter_max']
+
 # Retention Policy
 MAX_FILES = config['retention']['max_files']
 MAX_DAYS = config['retention']['max_days']
@@ -85,7 +89,9 @@ def run_sourcing_engine():
                 all_leads.append(results)
             
             # STEALTH: Random jitter between 21 and 42 seconds
-            time.sleep(random.uniform(21, 42))
+            wait_time = random.uniform(JITTER_MIN, JITTER_MAX)
+            print(f"  - Stealth jitter: waiting {wait_time:.2f}s...")
+            time.sleep(wait_time)
                 
         except Exception as e:
             print(f"  - Error querying {site}: {e}")

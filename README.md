@@ -27,6 +27,10 @@ The engine is decoupled from the search logic. To run your own search, update th
 * **Platform Control:** Toggle between LinkedIn, Indeed, and Google Jobs.
 * **Smart Filtering:** Add known low-quality boards to the `clutter_list` to scrub them from your results.
 
+### Configuration Management
+* **Sensitive Data:** Never commit `config.yaml` directly. It is ignored by `.gitignore` to protect your search parameters.
+* **Synchronization:** If you add new keys (like `stealth` or `jitter`) to `config.yaml`, ensure you mirror the structure in `config.yaml.example` using placeholder values.
+
 ## Installation
 1. Clone the repository.
 2. Create a virtual environment: `python -m venv .venv`

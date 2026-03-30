@@ -1,0 +1,48 @@
+# ==============================================================================
+# JOB SOURCING ENGINE CONFIGURATION (TEMPLATE)
+# ==============================================================================
+
+search:
+  # The Boolean search string. Use quotes to handle special characters. (e.g., "Chief Cat Herder" OR "Wizard of Light Bulbs")
+  term: '("ROLE A" OR "ROLE B") AND (Manager OR Director) AND ("INDUSTRY A" OR "INDUSTRY B")'
+  
+  # Geographic focus (e.g., "Middle Earth", "Atlantis", "United Kingdom", "USA", "London", "Dallas, TX")
+  location: "USA"
+  
+  # Target count per platform
+  results_wanted: 20
+  
+  # Remote only?
+  is_remote: true
+  
+  # Options: ["linkedin", "indeed", "google", "zip_recruiter", "glassdoor"]
+  sites: ["linkedin", "indeed", "google", "zip_recruiter", "glassdoor"]
+
+# Stealth and Anti-Scraping Controls, non-rhythmic delays between requests. Lower = faster but riskier.
+# Defaults min: 6, max: 14
+stealth:
+  jitter_min: 12
+  jitter_max: 28
+
+# DATA RETENTION & HYGIENE
+# ------------------------------------------------------------------------------
+retention:
+# The maximum number of CSV files to retain. 
+# When the folder exceeds this count, the oldest files are purged first 
+# to prevent local storage bloat.
+# Default 17
+  max_files: 17
+
+# The age limit (in days) for lead data. 
+# Files older than this are deleted to ensure your search results 
+# remain high signal and relevant to the current market.
+# Default 7
+  max_days: 7
+
+clutter_list: 
+  - "Swooped"
+  - "Lensa"
+  - "Talentify"
+  - "Jobright"
+  - "MyJobHelper"
+  - "Jooble"
