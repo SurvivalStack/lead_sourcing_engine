@@ -1,14 +1,16 @@
-name: Project Auto-Sync
+name: Project Updates
 on:
+  issues:
+    types: [labeled]
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
-  sync_labels:
+  sync_and_notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync Status to Label
+      - name: Sync and Alert
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GH_AUTOMATION_TOKEN }}
@@ -67,7 +69,7 @@ jobs:
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({
-                    content: `Project Update: **${issue.title}** moved to **${status}**`
+                    content: `Project Update: **${issue.title}** is now **${status}**`
                   })
                 });
               }
