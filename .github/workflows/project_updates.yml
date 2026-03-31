@@ -1,13 +1,7 @@
 name: Topo Telemetry
-
 on:
-  # This IS supported, but linters often flag it because it's 'newer'
-  project_v2_item:
-    types: [created, edited, moved, deleted]
-
-# This is the "Radio" that lets the Repo see the Org-level Project
-permissions:
-  repository-projects: read
+  issues:
+    types: [labeled, unlabeled]
 
 jobs:
   notify_discord:
@@ -18,6 +12,5 @@ jobs:
         with:
           severity: info
           username: "The Topo"
-          # We use a generic message because the 'item' payload is complex
-          details: "Roadmap Update: An item on SurvivalStack's Topo has been updated."
+          details: "Roadmap Update: [${{ github.event.issue.title }}] status changed to: ${{ github.event.label.name }}"
           webhookUrl: ${{ secrets.DISCORD_PROJECT_WEBHOOK }}
