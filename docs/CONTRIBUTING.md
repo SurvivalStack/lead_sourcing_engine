@@ -16,8 +16,6 @@ This project enforces the [Conventional Commits](https://www.conventionalcommits
 | **refactor** | Code changes that neither fix bugs nor add features. |
 | **chore** | Maintenance (dependencies, housecleaning). |
 
----
-
 ## Branching Strategy
 - **main:** Stable, production-ready code.
 - **feat/* or fix/*:** Short-lived branches for development.
