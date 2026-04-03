@@ -11,6 +11,7 @@ def load_config():
     try:
         with open("config.yaml", "r") as f:
             return yaml.safe_load(f)
+
     except FileNotFoundError:
         print("CRITICAL ERROR: config.yaml not found. Please create it.")
         exit(1)
